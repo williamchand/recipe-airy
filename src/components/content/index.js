@@ -1,5 +1,5 @@
 import React from 'react';
-import HomePage from '../component/home';
+import HomePage from '../components/home';
 
 function Appcontent() {
   return (
