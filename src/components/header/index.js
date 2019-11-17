@@ -1,5 +1,5 @@
 import React from 'react';
-import {uHeader} from './style';
+import {uHeader} from './styles';
 function Appheader() {
   return (
     <div className={uHeader}>
