@@ -1,15 +1,16 @@
 import React from 'react';
+import { uCard, uCardImgTop, uCardRating, uCardBody, uCardTitle, uCardCreator, uCardText } from './styles';
 
 function Card(props) {
   const {image, title, rating, description, creator} = props;
   return (
-    <div className="card">
-      <img className="card-img-top" src={image} alt="" />
-      <div>{rating}</div>
-      <div className="card-body">
-        <h5 className="card-title">{title}</h5>
-        <h5 className="card-creator">{creator}</h5>
-        <p className="card-text">{description}</p>
+    <div className={uCard}>
+      <img className={uCardImgTop} src={image} alt="" />
+      <div className={uCardRating}>{rating}</div>
+      <div className={uCardBody}>
+        <h5 className={uCardTitle}>{title}</h5>
+        <h5 className={uCardCreator}>{creator}</h5>
+        <p className={uCardText}>{description}</p>
       </div>
     </div>
   );

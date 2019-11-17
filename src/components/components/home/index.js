@@ -1,9 +1,12 @@
 import React from 'react';
-import Card from './components/Card';
+import Recipe from './components/Recipe';
+import {uHomeBody} from './styles';
+
 function HomePage() {
+  
   return (
-    <div>
-      <Card />
+    <div className={uHomeBody}>
+      <Recipe/>
     </div>
   );
 }
