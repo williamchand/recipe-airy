@@ -1,5 +1,5 @@
 import React from 'react';
-// import Card from './Card';
+import Card from './Card';
 import {uRecipe} from './styles';
 
 function Recipe() {
@@ -13,17 +13,20 @@ function Recipe() {
     .sort(
       (a, b) => b.rating - a.rating
     );
-  React.useEffect(()=>{
+  React.useEffect(() => {
     fetch("https://api.myjson.com/bins/171v5n").then(res=> res.json())
       .then(response => setRecipeList(response.recipe))
       .catch(()=>{
         setRecipeList([]);
       });
   },[setRecipeList]);
-  console.log(recipeListFiltered);
+  const showCard = () => {
+    return recipeListFiltered.map(item => <Card image={item.image} title={item.name} rating={item.rating} description={item.review} creator={item.creator} />);
+  };
+
   return (
     <div className={uRecipe}>
-      {/* <Card image={image} title={title} rating={rating} description={description} creator={creator} /> */}
+      {showCard()}
     </div>
   );
 }
